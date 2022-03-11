@@ -6,10 +6,10 @@ import csv
 video = input("What show or movie are you looking for? ")
 
 # Set path for file
-csvpath = os.path.join("09-Evr_WritingNetflixData", "Resources", "netflix_ratings.csv")
+csvpath = os.path.join("Week3-Python","3-2-Student-Resources","09-Evr_WritingNetflixData","Resources","netflix_ratings.csv")
 
 # Specify the file to write to the movie data.
-
+txtpath = os.path.join("Week3-Python","3-2-Student-Resources","09-Evr_WritingNetflixData","output", "netflix_data.txt")
 
 # Set a variable to false to check if we found the video
 found = False
@@ -26,16 +26,16 @@ with open(csvpath, newline="") as csvfile:
             found = True
  
             # Open the file using "write" mode. Specify the variable to hold the contents
-            
+            with open(txtpath, 'w') as textfile:
                 
                 # Create a variable to hold the title, rating level, and the movie rating inside parentheses.
-               
+                netflix_data = (f"TItle: {row[0]}\n"f"Rating Leel: {row[1]}\n"f"Rated: {row[5]}\n")
                 
                 # Write the movie data to the text file.
-                
+                textfile.write(netflix_data)
 
                 # Print the movie data to the console.
-                
+                print(netflix_data)
 
             # Stop at first results to avoid duplicates
             break
