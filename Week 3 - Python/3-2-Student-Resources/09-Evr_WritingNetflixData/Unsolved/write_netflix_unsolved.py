@@ -6,7 +6,7 @@ import csv
 video = input("What show or movie are you looking for? ")
 
 # Set path for file
-csvpath = os.path.join("..", "Resources", "netflix_ratings.csv")
+csvpath = os.path.join("09-Evr_WritingNetflixData", "Resources", "netflix_ratings.csv")
 
 # Specify the file to write to the movie data.
 
