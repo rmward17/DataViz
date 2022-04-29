@@ -29,7 +29,7 @@ def scrape():
 
     # Update the Mongo database using update and upsert=True
     # @TODO: YOUR CODE HERE!
-
+    
     # Redirect back to home page
     return redirect("/")
 

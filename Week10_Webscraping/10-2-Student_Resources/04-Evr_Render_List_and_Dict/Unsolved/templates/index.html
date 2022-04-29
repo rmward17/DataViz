@@ -11,13 +11,15 @@
 
 <body>
   <div class="container text-center">
-    <h1 class="jumbotron">Dogs up for Adoption!</h1>
+    <h1 class="jumbotron" style="background-color: salmon;">Dogs up for Adoption!</h1>
     <div>
       <ul style="list-style: none;">
 
         <!-- Loop through the dictionary -->
-        
-
+      {%for i in range(0,length)%}
+        <li>A {{pets[i]['type']}} named {{pets[i]['name']}}</li>
+      {%endfor%}
+       
       </ul>
     </div>
   </div>
