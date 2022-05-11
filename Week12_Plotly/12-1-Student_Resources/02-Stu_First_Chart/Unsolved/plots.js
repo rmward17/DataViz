@@ -20,7 +20,7 @@ var data = [trace];
 var layout = {
   title: "Eye Flickers by Eye Color",
   xaxis: {title: "Eye Color"},
-  yaxis: {title: "Flicker Frequency"}
+  yaxis: {title: "Flicker Frequency"},
 };
 // Plot the chart to a div tag with id "bar-plot"
 Plotly.newPlot("bar-plot", data, layout);
