@@ -3,10 +3,11 @@ function handleSubmit() {
   // @TODO: YOUR CODE HERE
 
   // Select the input value from the form
-
+  var city = d3.select("cityInput").node().value;
   // clear the input value
-
+  d3.select("cityInput").node().value = "";
   // Build the plot with the new stock
+  buildPlot(city);
 }
 
 function getTimes(owmData) {
@@ -18,7 +19,7 @@ function getTemps(owmData) {
 }
 
 function buildPlot(stock) {
-  var apiKey = "YOUR KEY HERE";
+  var apiKey = "16e3a4989ff812b836b68560d8e50bf2";
 
   let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
 
@@ -41,7 +42,7 @@ function buildPlot(stock) {
     var plotData = [trace1];
 
     var layout = {
-      title: `${data.city.name} 5-day forecast`,
+      title: `${data.city.name} 5-day forecast`
     };
 
     Plotly.newPlot("plot", plotData, layout);
@@ -50,3 +51,4 @@ function buildPlot(stock) {
 
 // Add event listener for submit button
 // @TODO: YOUR CODE HERE
+
