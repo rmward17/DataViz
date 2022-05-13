@@ -4,9 +4,10 @@ var uk = Object.values(data.uk);
 var canada = Object.values(data.canada);
 
 // Create an array of music provider labels
-var provider = ["Spotify", "Soundcloud", "Pandora", "Itunes"];
+var provider = Object.keys(data.us);
 
 // Display the default plot
+function init(){
 var trace = {
   values: [19,5,8,30],
   labels: provider,
@@ -16,6 +17,7 @@ var trace = {
 var data = [trace];
 
 Plotly.newPlot('pie', data);
+}
 
 // On change to the DOM, call getData()
 d3.selectAll("#dropdown").on("change", getData);
@@ -25,22 +27,23 @@ function getData() {
   var dataset = dropdown.property("value");
 
   // Assign the value of the dropdown menu option to a variable
-  var xData = ["Spotify", "Soundcloud", "Pandora", "Itunes"];
+  
   // Initialize an empty array for the country's data
   var yData = [];
-  if (dataset === 'us') {
-    yData = [19,5,8,30];
+  if (dataset == 'us') {
+    yData = us;
   };
-  if (dataset === 'uk') {
-    yData = [10,2,22,37];
+  if (dataset == 'uk') {
+    yData = uk;
   };
-  if (dataset === 'canada') {
-    yData = [14,2,5,15];
+  if (dataset == 'canada') {
+    yData = canada;
   };
-}
-// Update the restyled plot's values
-var trace = {
-  labels: xData,
-  values: yData
+  updatePlotly(yData);
 };
+// Update the restyled plot's values
+function updatePlotly(newdata){
+  Plotly.restyle("pie","values", [newdata]);
+}
 
+init();
