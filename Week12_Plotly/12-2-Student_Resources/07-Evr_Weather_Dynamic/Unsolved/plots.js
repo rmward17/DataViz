@@ -19,7 +19,7 @@ function getTemps(owmData) {
 }
 
 function buildPlot(stock) {
-  var apiKey = "16e3a4989ff812b836b68560d8e50bf2";
+  var apiKey = "";
 
   let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`
 
